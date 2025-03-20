@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresas que confían en nosotros</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style>
+        /* Contenedor principal */
+        .clientes-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .clientes-container h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Estilos del Swiper */
+        .swiper-clientes {
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Tamaño y forma de los logos */
+        .swiper-clientes .swiper-slide img {
+            width: var(--logo-size, 100px);  /* Ajustable */
+            height: var(--logo-size, 100px);
+            object-fit: contain;
+            border-radius: var(--logo-radius, 0px); /* 0px para cuadrados, 50% para redondos */
+            transition: transform 0.3s ease;
+        }
+
+        /* Efecto hover */
+        .swiper-clientes .swiper-slide img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Flechas de navegación */
+        .swiper-clientes .swiper-button-next,
+        .swiper-clientes .swiper-button-prev {
+            color: #333; /* Color de las flechas */
+        }
+
+        /* Paginación */
+        .swiper-clientes .swiper-pagination {
+            position: relative;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clientes-container">
+        <h2>Empresas que confían en nosotros</h2>
+        <div class="swiper swiper-clientes">
+            <div class="swiper-wrapper">
+                <!-- Agregar URLs de las imágenes de las marcas -->
+                <div class="swiper-slide"><img src="https://content.pancake.vn/1/91/ca/97/d2/956f1a4d464747c33a8f21fd31287dea593b50ad34de9f08432af0d6-w:276-h:276-l:24063-t:image/jpeg.jpg" alt="Marca 1"></div>
+                <div class="swiper-slide"><img src="https://content.pancake.vn/1/a9/23/77/b3/2ccb7f1bb3e4b668ea964060d411518e1bb8bee97506d0a6b799663e-w:230-h:199-l:8408-t:image/jpeg.jpeg" alt="Marca 2"></div>
+                <div class="swiper-slide"><img src="https://content.pancake.vn/1/0f/bc/5f/ef/78a9c5e1027225b9ce53eba08960c6967dc4d4adb4405e7d9062ee65-w:500-h:500-l:14613-t:image/png.png" alt="Marca 3"></div>
+                <div class="swiper-slide"><img src="https://content.pancake.vn/1/eb/f9/68/20/780e378cb8657c11f75055a3964995204e75d460bb3b5d028aa3cb89-w:225-h:225-l:8458-t:image/jpeg.jpeg" alt="Marca 4"></div>
+            </div>
+
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- Puntos de paginación -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- Scripts de Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiperClientes = new Swiper('.swiper-clientes', {
+            slidesPerView: 4, // Muestra 4 logos a la vez en PC
+            spaceBetween: 20, // Espaciado entre logos
+            loop: true, // Reproducción infinita
+            autoplay: {
+                delay: 0, // Sin pausas
+                disableOnInteraction: false,
+            },
+            speed: 3000, // Velocidad de desplazamiento
+            grabCursor: true,
+            navigation: {
+                nextEl: '.swiper-clientes .swiper-button-next',
+                prevEl: '.swiper-clientes .swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-clientes .swiper-pagination',
+                clickable: true,
+            }
+        });
+
+        // Configurar forma y tamaño de los logos
+        document.documentElement.style.setProperty('--logo-radius', '50%'); // 50% para redondos, 0px para cuadrados
+        document.documentElement.style.setProperty('--logo-size', '60px'); // Ajustar tamaño de los logos
+    </script>
+
+</body>
+</html>
